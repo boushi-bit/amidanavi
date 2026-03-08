@@ -68,7 +68,7 @@ export default function KyoView({ lines, currentIndex, charProgress }: KyoViewPr
   return (
     <div
       ref={containerRef}
-      className="flex-1 overflow-y-auto overflow-x-hidden px-4 relative"
+      className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden px-4 relative"
       style={{ paddingTop: "45vh", paddingBottom: "45vh" }}
     >
       {lines.map((line, idx) => {
