@@ -69,8 +69,9 @@ export default function KyoView({ lines, currentIndex, charProgress }: KyoViewPr
     <div
       ref={containerRef}
       className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden px-4 relative"
-      style={{ paddingTop: "45vh", paddingBottom: "45vh" }}
     >
+      {/* Spacer to center first line (scrollable, not padding) */}
+      <div style={{ height: "45vh" }} aria-hidden="true" />
       {lines.map((line, idx) => {
         const isCurrent = idx === currentIndex;
         const isPast = idx < currentIndex;
@@ -133,6 +134,8 @@ export default function KyoView({ lines, currentIndex, charProgress }: KyoViewPr
           </div>
         );
       })}
+      {/* Spacer to center last line (scrollable, not padding) */}
+      <div style={{ height: "45vh" }} aria-hidden="true" />
     </div>
   );
 }
